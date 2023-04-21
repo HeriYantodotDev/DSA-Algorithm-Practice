@@ -9,18 +9,18 @@ In addition to the problem solutions, I have also included a test file. You can 
 I hope that this repository helps you in your DSA practice and provides a useful resource for you to refer to when working on similar problems in the future. Happy coding!
 
 ## How to Use this repo
-- Clone this repository
-- `npm install`. This will install all the dependency.
-- `npm run test. This runs the test.
-- find the problem that you'd like to work with then remove the solution. You can start write your own implementation. And run `npm run test` to check whether the solution passes the test or not. 
+- ✅ Clone this repository
+- ✅ `npm install`. This will install all the dependency.
+- ✅ `npm run test. This runs the test.
+- ✅ find the problem that you'd like to work with then remove the solution. You can start write your own implementation. And run `npm run test` to check whether the solution passes the test or not. 
 
 ## Basic DSA & Algoritm
 ### running-sum-of-1d-array
-- Problem: [link](https://leetcode.com/problems/running-sum-of-1d-array)
-- Solution: [link](./src/basic-dsa-algorithm/running-sum-of-1d-array.ts)
+- ❓ Problem: [link](https://leetcode.com/problems/running-sum-of-1d-array)
+- 📝 Solution: [link](./src/basic-dsa-algorithm/running-sum-of-1d-array.ts)
 ### find-pivot-index
-- Problem: [link](https://leetcode.com/problems/find-pivot-index/)
-- Solution: [link](./src/basic-dsa-algorithm/find-pivot-index.ts)
+- ❓ Problem: [link](https://leetcode.com/problems/find-pivot-index/)
+- 📝 Solution: [link](./src/basic-dsa-algorithm/find-pivot-index.ts)
 ## Data Structure 
 
 ## Algorithm 
