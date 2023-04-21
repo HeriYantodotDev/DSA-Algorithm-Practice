@@ -1,6 +1,9 @@
 import { 
   runningSum,
-  pivotIndex
+  pivotIndex,
+  isIsomorphic,
+  isIsomorphic2,
+  isSubsequence
 } from '../basic-dsa-algorithm';
 
 describe ('Running-sum-of-1d-array' ,() => {
@@ -23,4 +26,54 @@ describe ('find-pivot-index' ,() => {
   `('Pivot Index: If input array is $inputArray, $expected is receieved', ({inputArray, expected}) => {
     expect(pivotIndex(inputArray)).toStrictEqual(expected);
   });
+});
+
+describe ('isomorphic-strings' ,() => {
+  test.each`
+    s                          | t            | result
+    ${'egg'}                   | ${'add'}     | ${true}
+    ${'eggs'}                  | ${'add'}     | ${false}
+    ${'foo'}                   | ${'bar'}     | ${false}
+    ${'paper'}                 | ${'title'}   | ${true}
+    ${'turtle'}                | ${'murder'}  | ${false}
+    ${'add'}                   | ${'egg'}     | ${true}
+    ${'aac'}                   | ${'aab'}     | ${true}
+    ${'elephant'}              | ${'edhkgkoa'}| ${false}
+    ${'abcdefghijklmno'}       | ${'zyxwvutsrqponab'} | ${true}
+    ${'abcdefghijklmnopqrstuvwxyz'} | ${'zyxwvutsrqponmlkjihgfedcba'} | ${true}
+    ${'ab'} | ${'aa'} | ${false}
+  `('Solution 1: If s = $s, and t = $t", then $result', ({s, t, result}) => {
+    expect(isIsomorphic(s, t)).toBe(result); //first solution: using Map
+  });
+
+  test.each`
+  s                          | t            | result
+  ${'egg'}                   | ${'add'}     | ${true}
+  ${'eggs'}                  | ${'add'}     | ${false}
+  ${'foo'}                   | ${'bar'}     | ${false}
+  ${'paper'}                 | ${'title'}   | ${true}
+  ${'turtle'}                | ${'murder'}  | ${false}
+  ${'add'}                   | ${'egg'}     | ${true}
+  ${'aac'}                   | ${'aab'}     | ${true}
+  ${'elephant'}              | ${'edhkgkoa'}| ${false}
+  ${'abcdefghijklmno'}       | ${'zyxwvutsrqponab'} | ${true}
+  ${'abcdefghijklmnopqrstuvwxyz'} | ${'zyxwvutsrqponmlkjihgfedcba'} | ${true}
+  ${'ab'} | ${'aa'} | ${false}
+`('Solution 2: If s = $s, and t = $t", then $result', ({s, t, result}) => {
+  expect(isIsomorphic2(s, t)).toBe(result); //Second solution: using indexOf to map the the index
+});
+});
+
+describe ('is-Subsequence' ,() => {
+  test.each`
+    s                          | t               | result
+    ${'abc'}                   | ${'ahbgdc'}     | ${true}
+    ${'axc'}                   | ${'ahbgdc'}     | ${false}
+    ${'acb'}                   | ${'ahbgdc'}     | ${false}
+    ${'aaaaaa'}                | ${'bbaaaa'}     | ${false}
+  `('Is-Subsequence If s = $s, and t = $t", then $result', ({s, t, result}) => {
+    expect(isSubsequence(s, t)).toBe(result); 
+  });
+
+
 });
